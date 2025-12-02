@@ -14,5 +14,5 @@ Feature: Searching a new cars
    |carBrand|carTitel|
    |Toyota  |Toyota Cars|
    |Kia     |Kia Cars   |
-   |Honda   |Hyundai Carss |
+   |Honda   |Hyundai Cars|
    |BMW     |BMW Cars   |
