@@ -8,7 +8,7 @@ Feature: Searching a new cars
     When user mouseover to a newcars
     Then user clicks on a find new cars
     And user clicks on a "<carBrand>" car
-    And user vslidates car titel as "<carTitel>"
+    And user validates car titel as "<carTitel>"
 
    Examples:
    |carBrand|carTitel|

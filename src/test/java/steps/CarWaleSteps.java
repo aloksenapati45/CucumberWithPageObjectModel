@@ -42,7 +42,7 @@ public class CarWaleSteps {
             car.goToHyundai();
         }
     }
-    @And("user vslidates car titel as {string}")
+    @And("user validates car titel as {string}")
     public void user_vslidates_car_titel(String carTitel) {
         Assert.assertTrue(BasePage.carBase.getCarTitel().equals(carTitel));
     }
