@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 import page.object.HomePage;
+import page.object.compareCarsPage.CompareCarsPage;
 import page.object.exploreUsedCarPage.ExploreUsedCarPage;
 import page.object.findNewCarsPage.NewCarsPage;
 import page.object.ToyotaCarPage;
@@ -19,6 +20,7 @@ public class CarWaleSteps {
     NewCarsPage car;
     ToyotaCarPage toyota;
     ExploreUsedCarPage usedcar;
+    CompareCarsPage comparecar;
 
 
     @Given("user navigates to a carwale.com website")
@@ -69,5 +71,29 @@ public class CarWaleSteps {
     public void user_validates_car_titel_as_used_tata_cars_in_india() {
         page.scrollToUpperElement();
         Assert.assertTrue(BasePage.carBase.getUsedCarDetails().contains("Used Tata Cars"));
+    }
+
+    @Then("user clicks on a Compare car")
+    public void user_clicks_on_a_compare_car() {
+        comparecar = page.clickOnCompareCars();
+    }
+
+    @Then("user Select a car in first box")
+    public void user_select_a_car_in_first_box() {
+        comparecar.clickingSelectCarFirstBox();
+    }
+
+    @And("user Select a car in second box")
+    public void user_select_a_car_in_second_box() {
+        comparecar.clickingSelectCarSecondBox();
+    }
+
+    @Then("user clicks on a compare button")
+    public void user_clicks_on_a_compare_button() {
+        comparecar.clickingCompareButton();
+    }
+    @And("user validate Tata Nexon vs Mahindra Bolero titel")
+    public void user_validate_tata_nexon_vs_mahindra_bolero_titel() {
+        Assert.assertTrue(comparecar.validatingTitel().equals("Tata Nexon vs Mahindra Bolero"));
     }
 }
