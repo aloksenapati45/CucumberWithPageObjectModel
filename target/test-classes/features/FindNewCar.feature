@@ -1,3 +1,4 @@
+@FindNewCar
 Feature: Searching a new cars
   In order to search new car
   As a user
