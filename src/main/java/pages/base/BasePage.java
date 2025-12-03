@@ -1,6 +1,7 @@
 package pages.base;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -103,5 +104,18 @@ public class BasePage {
         }else if(Locator.endsWith("_PARTIALLINKTEXT")){
             driver.findElement(By.partialLinkText(SeleniumDriver.OR.getProperty(Locator))).sendKeys(value);
         }
+    }
+
+    public void scrollToElement(String Locator){
+        if(Locator.endsWith("_XPATH")){
+            WebElement element = driver.findElement(By.xpath(SeleniumDriver.OR.getProperty(Locator)));
+            //((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+            new Actions(driver).moveToElement(element).perform();
+        }
+    }
+
+    public void scrollToUpperElement(){
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+        //new  Actions(driver).sendKeys("Keys.PAGE_UP").build().perform();
     }
 }

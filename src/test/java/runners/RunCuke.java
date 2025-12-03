@@ -5,7 +5,6 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/resources/features",
                  glue={"steps"},
+                 tags = "@UsedCar",
                  plugin ={"html:target/cucumber-report/cucumber-html-report.html"})
-public class RunCuke extends AbstractTestNGCucumberTests {
-
-}
+public class RunCuke extends AbstractTestNGCucumberTests {}

@@ -1,5 +1,9 @@
-package page.object;
+package page.object.findNewCarsPage;
 
+import page.object.BMWCarPage;
+import page.object.MahindraCarPage;
+import page.object.TATACarPage;
+import page.object.ToyotaCarPage;
 import pages.base.BasePage;
 
 public class NewCarsPage extends BasePage {
